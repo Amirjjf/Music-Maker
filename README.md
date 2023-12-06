@@ -1,5 +1,5 @@
 # Music-Maker
-Introduction
+Introduction\n
 an innovative music-making application that allows users to unleash their creativity in producing unique musical compositions. This tool is designed for music enthusiasts, offering an intuitive platform for crafting original music using a variety of samples and personal recordings.
 
 Key Features
