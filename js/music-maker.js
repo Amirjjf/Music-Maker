@@ -1,5 +1,3 @@
-// I have used some help and sueggstions from the AI in this code
-
 
 const samples = []
 let micRecorder;
