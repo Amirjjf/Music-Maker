@@ -1,8 +1,10 @@
 # Music-Maker
-Introduction\n
+Introduction
+
 an innovative music-making application that allows users to unleash their creativity in producing unique musical compositions. This tool is designed for music enthusiasts, offering an intuitive platform for crafting original music using a variety of samples and personal recordings.
 
 Key Features
+
 Diverse Sample Library: Music-Maker boasts an extensive collection of pre-loaded samples, enabling users to explore and incorporate different sounds into their tracks.
 
 Customizable Tracks: Users can effortlessly add, arrange, and modify samples on multiple tracks, providing complete control over their musical arrangement.
