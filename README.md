@@ -25,7 +25,8 @@ Open the HTML File: Navigate to the downloaded folder and open the index.html fi
 
 Explore and Create: Start exploring the diverse range of samples and utilize the intuitive tools to create your unique music tracks.
 
-Contributions and Feedback
+##Contributions and Feedback##
+
 We value your input! Feel free to contribute to this project by submitting pull requests or sharing your feedback and suggestions in the issues section.
 
 
