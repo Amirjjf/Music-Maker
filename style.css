@@ -1,0 +1,563 @@
+/* I have used some help and suggestions from AI in this code */
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FF0000, #FF7F00, #FFFF00, #FF69B4, #00FF00, #00FFFF, #0000FF, #8B00FF);
+    background-size: 100% 100%; /* Adjusted to fit the full viewport */
+    background-attachment: fixed;
+    transition: all .5s ease-out;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+/* Outer Wrapper */
+#outer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Enhanced Wrapper Styling */
+#wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 60%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(245, 87, 108, 0.3);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+}
+
+#wrapper:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+
+
+
+
+/* Header styles */
+h1 {
+    font-size: 3rem;
+    color: #5151E5;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+button {
+    background-color: #5151E5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #72EDF2;
+}
+
+.control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#play {
+    width: 60px;
+    height: 60px; 
+    margin: 20px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(255,26,26,0.22);
+    cursor: pointer;
+    transform: scale(1.5);
+    font-size: 20px;
+}
+
+#play:hover{
+    transform: scale(1.6);
+    background-position: left bottom;
+}
+
+#play:active{
+    box-shadow: inset 0 6px 10px rgba(0,0,0,0.5);
+    transform: scale(1.5);
+}
+
+#stop:hover{
+    transform: scale(1.1);
+}
+
+#stop:active{
+    box-shadow: inset 0 6px 10px rgba(0,0,0,0.4);
+    transform: scale(1);
+}
+
+#stop {
+    width: 60px;
+    height: 60px; 
+    margin: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #f53192;
+    box-shadow: 0 10px 20px rgba(255,26,26,0.22);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.btn-dark.btn-lg {
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+    color: #fff;
+    border: none;
+}
+
+.btn-dark.btn-lg:hover {
+    background-position: left bottom;
+}
+
+.btn-dark.btn-lg.m-2 {
+    margin: 8px !important;
+}
+
+.btn.btn-dark.btn-lg.m-2 {
+    position: relative;
+  }
+
+.deleteSampleButton {
+    position: absolute;
+    left: 0; 
+    top: 15%; 
+    transform: translateY(-50%);
+    min-width: auto; 
+    min-height: auto; 
+    padding: 0;
+    margin: 0; 
+    background: none; 
+    border: none; 
+    font-size: 12px; 
+    cursor: pointer; 
+    border-radius: 50%;
+  }
+  
+  /* Style for the icon in the delete button */
+.deleteSampleButton i {
+    padding: 0;
+    margin: 0;
+}
+  
+  /*Style for hover effect */
+.deleteSampleButton:hover {
+    color: blue;
+}
+
+
+.deleteTrackButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    background-color: #f53192;
+    border-radius: 50%;
+    font-size: 16px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 24px; 
+    height: 24px;
+    z-index: 10;
+}
+
+
+
+
+
+
+.category {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    
+}
+
+
+.categoryContainer {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+.runOnceButton{
+    background-color: #f53192;
+    border-radius: 50%;
+    font-size: 16px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.runOnceButton.active {
+    box-shadow: inset 0 6px 10px rgba(0,0,0,0.5);
+}
+
+.runOnceButton:hover {
+    background-color: #f53192;
+}
+
+
+.sampleintrack {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+    background-color: lightpink;  
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.sampleintrack::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: 0;
+    background: darkpink;  
+    transition: width .5s ease-out;
+    width: var(--hover-width, 0%);  
+}
+
+
+.deleteButton, input[type="range"] {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.sampleintrack::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;  
+    height: 100%;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+    transition: width .5s ease-out;
+    width: var(--hover-width, 0%);
+    z-index: -1;  
+}
+
+
+
+
+input[type=range] {
+    -webkit-appearance:none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #aaa, #f53192);
+    outline:none;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+input[type=range]:focus {
+    box-shadow: 0 0 5px #f53192;
+}
+
+input[type=range]:hover {
+    box-shadow: 0 0 5px #f53192;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff; /* Changed to white for better visibility */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    background: #f0f0f0;
+}
+
+
+
+.deleteButton{
+    background-color: #f53192;
+    border-radius: 50%;
+    font-size: 16px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteButton:hover {
+    background-color: #f53192;
+}
+
+.deleteButton:active {
+    box-shadow: inset 0 6px 10px rgba(0,0,0,0.5);
+}
+
+
+/* Style for the file input */
+#input-sample {
+    opacity: 0.7;
+    position: relative;
+    z-index: 1;
+}
+
+/* Style for the upload button */
+#upload {
+    background: linear-gradient(90deg, #FF007D, #FF00FF, #FF66B2, #FF69B4, #FF1493);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#upload:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background-position: left bottom;
+    transform: translateY(-3px);
+}
+
+#upload:active {
+    box-shadow: 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-position: left bottom;
+    transform: scale(0.95);
+}
+
+
+/* Base styling for the div container */
+#download {
+    background: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 100%;  
+    min-width: 300px;  
+    max-height: 400px; 
+    overflow-y: auto;  
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  }
+
+/* Base styling for the actual download link */
+#download a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center; 
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background-color: #007BFF;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the download link */
+#download a:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Active/Clicked state for the download link */
+#download a:active {
+  background-color: #004085;
+  transform: scale(0.95);
+}
+
+  
+
+
+/* Input type="file" styles */
+input[type=file] {
+    margin: 20px 0;
+}
+
+/* Track selection and volume controls */
+input[type=radio], input[type=range] {
+    margin: 10px;
+}
+
+/* Styling for individual tracks */
+#tracks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Individual track styling */
+.trackDiv {
+    position: relative;
+    width: 45%;
+    background: linear-gradient(90deg, #FF007D, #FF00FF, #FF66B2, #FF69B4, #FF1493);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all .5s ease-out;
+    color: #fff;
+}
+
+.trackDiv:hover {
+    background-position: left bottom;
+}
+
+/* Track header styling */
+.trackHeader {
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Volume input styling */
+.trackVolume {
+    width: 100%;
+}
+
+
+#stopRecording,
+#startRecording {
+  background: linear-gradient(90deg, #FF007D, #FF00FF, #FF66B2, #FF69B4, #FF1493);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+#stopRecording:hover,
+#startRecording:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-position: left bottom;
+  transform: translateY(-3px);
+}
+
+#stopRecording:active,
+#startRecording:active{
+    box-shadow: 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-position: left bottom;
+    transform: scale(0.95);
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    #wrapper {
+        width: 90%;  /* Increase wrapper width */
+    }
+    h1 {
+        font-size: 2rem;  /* Decrease font size */
+    }
+    button {
+        padding: 10px 30px;  /* Reduce button padding */
+    }
+    #tracks {
+        flex-direction: column;  /* Stack track divs vertically */
+        align-items: center;
+    }
+    #trackDiv0, #trackDiv1, #trackDiv2, #trackDiv3 {
+        width: 90%;  /* Increase individual track width */
+    }
+
+    button, .runOnceButton, .deleteButton {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+
+    h1, .trackHeader {
+        font-size: 1.8rem;
+    }
+
+    input[type=range], input[type=file] {
+        width: 90%;
+    }
+
+    .trackDiv {
+        padding: 24px;
+    }
+
+    .sampleintrack {
+        padding: 16px;
+    }
+
+}
